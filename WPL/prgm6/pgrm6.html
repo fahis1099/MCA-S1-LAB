@@ -1,0 +1,233 @@
+<html>
+    <head>
+        <title>PROGRAM 6</title>
+        <style>
+            body{
+                margin: 0;
+                padding: 20px;
+                background-color: #f4f4f4;
+            }
+            h1{
+                font-size: 35px;
+                font-style: normal;
+                text-align: center;
+            }
+            h2{
+                font-size: 25px;
+                margin-left: 20px;
+            }
+            h3{
+                margin-left: 40px;
+            }
+            input{
+                margin-left: 40px;
+            }
+            p{
+                margin-left: 50px;
+            }
+            button{
+                margin-left: 40px;
+                padding: 8px 15px;
+                background-color: #28a745; /* Green button */
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Java Script String and Math Functions</h1><br>
+        <ol>
+            <li><h2>Java script String Functions</h2></li>
+            <input type="text" id="inputString" placeholder="Enter text here">
+            <ul>
+                <li><h3>String length : </h3></li>
+                    <button onclick="stringLength()">Length</button><br>
+                    <p id="length"></p>
+                <li><h3>String Slice : </h3></li>
+                    <button onclick="stringSlice()">slice</button><br>
+                    <p id="sliced1"></p>
+                    <p id="sliced2"></p>
+                <li><h3>String substring : </h3></li>
+                    <button onclick="stringSubstring()">substring</button><br>
+                    <p id="substringed1"></p>
+                <li><h3>String substr : </h3></li>
+                    <button onclick="stringSubstr()">substr</button><br>
+                    <p id="substred1"></p>
+                    <p id="substred2"></p>
+                    <p id="substred3"></p>
+                <li><h3>String Replace : </h3></li>
+                    <button onclick="stringReplace()">Replace</button><br>
+                    <p id="original"></p>
+                    <p id="replace"></p>
+                <li><h3>String Uppercase : </h3></li>
+                    <button onclick="stringUpperCase()">Uppercase</button><br>
+                    <p id="upper"></p>
+                <li><h3>String Lowercase : </h3></li>
+                    <button onclick="stringLowerCase()">Lowercase</button><br>
+                    <p id="lower"></p>
+                <li><h3>String Concat : </h3></li>
+                    <button onclick="stringConcat()">Concat</button><br>
+                    <p id="concated1"></p>
+                    <p id="concated2"></p>
+                    <p id="concated3"></p>
+            </ul>
+            <br><br>
+            <li> <h2>Java script Math Functions</h2></li>
+            <ul>
+                <li><h3>Number To integer : </h3></li>
+                    <button onclick="numberConvertion()">Convert</button><br>
+                    <p id="num"></p>
+                    <ul>
+                        <li>Math Round : </li>
+                        <p id="round"></p>
+                        <li>Math Ceil : </li>
+                        <p id="ceil"></p>
+                        <li>Math Floor : </li>
+                        <p id="floor"></p>
+                        <li>Math Trunc : </li>
+                        <p id="trunc"></p>
+                    </ul>
+                <li><h3>Math Sign : </h3></li>
+                    <p>returns -1 if x is negative, 0 if null, and 1 if positive :</p>
+                    <button onclick="numberSign()">Sign</button><br>
+                    <p id="sign1"></p>
+                    <p id="sign2"></p>
+                    <p id="sign3"></p>
+                <li><h3>Math Pow : </h3></li>
+                    <p>Math.pow(x, y) returns the value of x to the power of y :</p>
+                    <button onclick="numberPow()">Power</button><br>
+                    <p id="power"></p>
+                <li><h3>Math sqrt : </h3></li>
+                    <p>Math.Sqrt(x) returns the square root of x :</p>
+                    <button onclick="numberSqrt()">Square Root</button><br>
+                    <p id="sqrt"></p>
+                <li><h3>Math Abs : </h3></li>
+                    <p>Math.abs(x) returns the absolute (positive) value of x :</p>
+                    <button onclick="numberAbs()">Absolute</button><br>
+                    <p id="absolute"></p>
+                <li><h3>Math Min and Max : </h3></li>
+                    <p>Math.min() and Math.max() can be used to find the lowest or highest value in a list of arguments :</p>
+                    <button onclick="numberMinMax()">min and max</button><br>
+                    <p id="list"></p>
+                    <p id="min"></p>
+                    <p id="max"></p>
+                <li><h3>Math Random : </h3></li>
+                    <p>Math.random() returns a random number between 0 (inclusive), and 1 (exclusive) :</p>
+                    <button onclick="numberRandom()">Random</button><br>
+                    <p id="random"></p>
+                <li><h3>Math Log : </h3></li>
+                    <p>Math.log(x) returns the natural logarithm of x :</p>
+                    <button onclick="numberLog()">Log</button><br>
+                    <p id="log"></p>
+                <li><h3>Math Log10 : </h3></li>
+                    <p>Math.log10(x) returns the base 10 logarithm of x :</p>
+                    <button onclick="numberLog10()">Log10</button><br>
+                    <p id="log10"></p>
+            </ul>
+
+
+        </ol>
+        <script>
+            // String Function
+            let inputElement = document.getElementById("inputString");
+            function stringLength(){
+                let text = inputElement.value;
+                let len = text.length;
+                document.getElementById("length").innerHTML = "Length of the string is : "+len; 
+            }
+
+            function stringSlice(){
+                let text = inputElement.value;
+                let slice1 = text.slice(7,13);
+                document.getElementById("sliced1").innerHTML = "String sliced from 7 to 13 : "+slice1;
+                let slice2 = text.slice(-12);
+                document.getElementById("sliced2").innerHTML = "String sliced by negative parameter (-12) : "+slice2;
+            }
+
+            function stringSubstring(){
+                let text = inputElement.value;
+                let substring1 = text.substring(7,13);
+                document.getElementById("substringed1").innerHTML = "Extracting text from String using substring method from 7 to 13 : "+ substring1;
+            }
+
+            function stringSubstr(){
+                let text = inputElement.value;
+                let substr1 = text.substr(7,6);
+                document.getElementById("substred1").innerHTML = "Extracting text from String using substr method from 7 to next 6 character : "+substr1;
+                let substr2 = text.substr(7);
+                document.getElementById("substred2").innerHTML = "Extracting text from String using substr method from 7 to end : "+substr2;
+                let substr3 = text.substr(-4);
+                document.getElementById("substred3").innerHTML = "Extracting text from String using negative parametr(-4) for substr method  : "+substr3;
+            }
+
+            function stringReplace(){
+                let text = inputElement.value;
+                let newtext = text.replace("Banana","Papaya");
+                document.getElementById("original").innerHTML = "Orginal string : "+text
+                document.getElementById("replace").innerHTML = "String after replaced : "+newtext
+            }
+            
+            function stringUpperCase(){
+                let text = inputElement.value;
+                let textUp = text.toUpperCase();
+                document.getElementById("upper").innerHTML = "String to Uppercase: "+ textUp;
+            }
+
+            function stringLowerCase(){
+                let text = inputElement.value;
+                let textLo = text.toLowerCase();
+                document.getElementById("lower").innerHTML = "String to Uppercase: "+ textLo;
+            }
+
+            function stringConcat(){
+                let text = inputElement.value;
+                let text2 = "Mango";
+                let text3 = text.concat(" ", text2);
+                document.getElementById("concated1").innerHTML = "String 1: "+ text;
+                document.getElementById("concated2").innerHTML = "String 2: "+ text2;
+                document.getElementById("concated3").innerHTML = "Concated String : "+ text3;
+            }
+            // Math Function 
+            function numberConvertion(){
+                let x = 10.2
+                document.getElementById("num").innerHTML = "The Number is  : " + x;
+                document.getElementById("round").innerHTML = "Math.round("+x+"), rounded to its nearest integer : " + Math.round(x);
+                document.getElementById("ceil").innerHTML = "Math.ceil("+x+"), rounded up to its nearest integer : " + Math.ceil(x);
+                document.getElementById("floor").innerHTML = "Math.floor("+x+"), rounded down to its nearest integer : " + Math.floor(x);
+                document.getElementById("trunc").innerHTML = "Math.trunc("+x+"), integer part of the number : " + Math.trunc(x);
+            }
+
+            function numberSign(){
+                document.getElementById("sign1").innerHTML = "Math.sign(4) returns: " + Math.sign(4);
+                document.getElementById("sign2").innerHTML = "Math.sign(-4) returns: " + Math.sign(-4);
+                document.getElementById("sign3").innerHTML = "Math.sign() returns: " + Math.sign(0);
+            }
+
+            function numberPow(){
+                document.getElementById("power").innerHTML = "Math.pow(10,2) retuns : " + Math.pow(10,2);
+            }
+             function numberSqrt(){
+                document.getElementById("sqrt").innerHTML = "Math.sqrt(100) retuns : " + Math.sqrt(100);
+            }
+            function numberAbs(){
+                document.getElementById("absolute").innerHTML = "Math.abs(-72.5) retuns : " + Math.abs(-72.5);
+            }
+            function numberMinMax(){
+                document.getElementById("list").innerHTML ="The List is : (0, 150, 30, 20, -8, -200)";
+                document.getElementById("min").innerHTML ="Minimum in the list is : " + Math.min(0, 150, 30, 20, -8, -200);
+                document.getElementById("max").innerHTML ="Maximum in the list is : " + Math.max(0, 150, 30, 20, -8, -200);
+            }
+            function numberRandom(){
+                document.getElementById("random").innerHTML = "Random Number is : " + Math.random();
+            }
+            function numberLog(){
+                document.getElementById("log").innerHTML = "Math.log(1) retuns : " +  Math.log(1);
+            }
+            function numberLog10(){
+                document.getElementById("log10").innerHTML = "Math.log10(100000) retuns : " + Math.log10(100000);
+            }
+        </script>
+    </body>
+</html>

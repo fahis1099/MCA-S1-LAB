@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <title>PROGRAM 11</title>
+        <style>
+            body {
+                text-align: center;
+                background-color: #f7f8fa;
+                margin-top: 40px;
+            }
+
+            h1 {
+                font-size: 32px;
+                color: #2c3e50;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 22px;
+                color: #34495e;
+                margin-bottom: 20px;
+            }
+
+            form {
+                display: inline-block;
+                text-align: left;
+                background-color: white;
+                padding: 25px 40px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 320px;
+            }
+
+            label {
+                font-weight: bold;
+            }
+
+            input[type="text"], input[type="password"] {
+                width: 100%;
+                padding: 8px;
+                margin: 6px 0 12px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            p {
+                color: red;
+                font-size: 14px;
+                margin-top: -10px;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>FORM VALIDATION</h1>
+        <form name="regForm" method="post" action="" onsubmit="return formValidate()">
+            <h2>Registration Form</h2>
+
+            <label>Name :</label>
+            <input type="text" id="fname" name="fname">
+            <p id="p1"></p>
+
+            <label>Email :</label>
+            <input type="text" id="email" name="email"><br>
+            <p id="p2"></p>
+
+            <label>Mobile Number :</label>
+            <input type="text" id="phno" name="phno"><br>
+            <p id="p3"></p>
+
+            <label>Password :</label>
+            <input type="text" id="password" name="password"><br>
+            <p id="p4"></p>
+
+            <input type="submit" value="Submit" name="submit">
+        </form>
+
+        <script>
+            function formValidate(){
+                let name = document.regForm.fname.value;
+                let email = document.forms["regForm"]["email"].value;
+                let phno = document.getElementById("phno").value;
+                let password = document.getElementById("password").value;
+                atpos = email.indexOf('@');
+                dotpos = email.lastIndexOf('.');
+                //name field check
+                if (name == "" || name == null){
+                    document.getElementById("p1").innerHTML = "Name field cannot be empty!";
+                    return false;
+                }
+                //email field check
+                else if(email == "" || email == "null"){
+                    document.getElementById("p2").innerHTML = "Email field cannot be empty!";
+                    return false;
+                }
+                //Email format check
+                else if(atpos < 1 || dotpos < atpos+2 || dotpos+2 >= email.length){
+                    document.getElementById("p2").innerHTML = "must at username@domain.com format!";
+                    return false;
+                }
+                //Mobine number and legth check
+                else if(isNaN(phno) || phno.length != 10){ 
+                    document.getElementById("p3").innerHTML = "Must be number and 10 digit!";
+                    return false;
+                }
+                //Password length check
+                else if(password.length<6){
+                    document.getElementById("p4").innerHTML = "Password must be at least 6 characters long!";
+                    return false;
+                }
+                else{
+                    alert("Successfully Registered ");
+                }
+            }
+        </script>
+    </body>
+</html>

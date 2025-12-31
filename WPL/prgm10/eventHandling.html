@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <title>program 10</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      h1 {
+        font-size: 32px;
+        color: #2c3e50;
+        margin-top: 20px;
+        letter-spacing: 1px;
+      }
+      h2 {
+        font-size: 22px;
+        color: #34495e;
+        margin-bottom: 20px;
+        font-weight: normal;
+      }
+
+      #image {
+        position: relative;
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+      }
+
+      #image img {
+        width: 80%;
+        height: auto;
+      }
+
+      #hidden {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent
+        color: white;
+        text-align: center;
+        display: none;
+      }
+
+      #txt {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body id="bc">
+    <h1>JAVASCRIPT EVENT HANDLING</h1><br>
+    <h2>Image and Text Change</h2>
+
+    <div id="image">
+      <img id="img" src="img1.png" alt="Image 1">
+      <div id="hidden">
+        <img src="img2.png" alt="Image 2">
+      </div>
+    </div>
+    <br><br>
+    <p id="txt">I see a car here !!</p>
+
+    <script>
+      var image = document.getElementById("img");
+      var hidden = document.getElementById("hidden");
+      var text = document.getElementById("txt");
+
+      image.addEventListener("mouseover", func1);
+      image.addEventListener("mouseout", func2);
+
+      function func1() {
+        hidden.style.display = 'block';
+        text.textContent = 'I see a bike here !!';
+      }
+
+      function func2() {
+        hidden.style.display = 'none';
+        text.textContent = 'I see a car here !!';
+      }
+    </script>
+  </body>
+</html>

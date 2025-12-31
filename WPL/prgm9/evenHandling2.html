@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>program 9</title>
+         <style>
+            body {
+                text-align: center;
+                background-color: #7a98b5;
+            }
+            h1 {
+                font-size: 32px;
+                color: #2c3e50;
+                margin-top: 20px;
+                letter-spacing: 1px;
+            }
+            h2 {
+                font-size: 22px;
+                color: #34495e;
+                margin-bottom: 20px;
+                font-weight: normal;
+            }
+            #btn {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 12px 30px;
+                font-size: 18px;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body id="bc">
+        <h1>JAVASCRIPT EVENT HANDLING</h1><br>
+        <h2>Background Color Change</h2>
+        <button id="btn">change Color</button>
+        <script>
+            var x = document.getElementById("btn");
+            var bcColor = document.getElementById("bc");
+
+            x.addEventListener("click", func1);
+
+            function func1() {
+                x.style.backgroundColor = 'blue';
+                bcColor.style.backgroundColor = 'red';
+            }
+        </script>
+    </body>
+</html>

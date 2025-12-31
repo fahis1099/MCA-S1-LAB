@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>Java Script Event Handling</title>
+        <style>
+            body {
+                background-color: #f4f4f9;
+                color: #333;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: 100px; 
+            }
+
+            h1 {
+                color: #38a169;
+                margin-bottom: 20px;
+            }
+
+            #para1 {
+                font-weight: bold;
+                margin: 20px 0;
+                text-align: center; 
+            }
+
+            #btn {
+                background-color: #38a169;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 1em;
+                border-radius: 5px;
+            }
+
+            #demo {
+                margin-top: 30px;
+                padding: 15px;
+                border: 1px solid #ccc;
+                background-color: #ffffff;
+                text-align: left;
+                width: 80%;
+                max-width: 400px;
+                border-radius: 5px;
+                min-height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Java Script Event Handling</h1>
+        <p id= "para1">Click the button below to see the magic!</p>
+        <button id="btn">Come on</button>
+        <p id="demo"></p>
+        <script>
+            let para = document.getElementById('para1');
+            var x = document.getElementById("btn");
+            x.addEventListener("click",func1);
+            x.addEventListener("mouseover",func2);
+            x.addEventListener("mouseout",func3);
+            x.addEventListener("dblclick",func4);
+            x.addEventListener("mouseup",func5);
+            x.addEventListener("mousedown",func6);
+            function func1(){
+                para.style.color = 'red';
+                para.textContent = 'Mouse Cliked';
+                document.getElementById("demo").innerHTML += "Mouse Clicked <br>";
+            }
+
+            function func2(){
+                para.style.color = 'green';
+                para.textContent = 'Mouse Over';
+                document.getElementById("demo").innerHTML += "Mouse Over <br>";
+            }
+
+            function func3(){
+                para.style.color = 'blue';
+                para.textContent = 'Mouse Out';
+                document.getElementById("demo").innerHTML += "Mouse Out <br>";
+            }
+
+            function func4(){
+                para.style.color = 'orange';
+                para.textContent = 'Mouse Double clicked';
+                document.getElementById("demo").innerHTML += "Mouse Double clicked <br>";
+            }
+
+            function func5(){
+                para.style.color = 'pink';
+                para.textContent = 'Mouse Up';
+                document.getElementById("demo").innerHTML += "Mouse Up <br>";
+            }
+
+            function func6(){
+                para.style.color = 'brown';
+                para.textContent = 'Mouse Down';
+                document.getElementById("demo").innerHTML += "Mouse Down <br>";
+            }
+        </script>
+    </body>
+</html>

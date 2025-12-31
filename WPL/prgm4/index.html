@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>MITS College</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+           body{
+            display: flex;
+            flex-direction: column;
+            background-image: linear-gradient(to right, rgb(57, 108, 181) , #3c4798);
+           }
+           #header-set{
+            background-image: linear-gradient(to right, rgb(171, 182, 197) , #dadce6);
+            margin: 0%;
+           } 
+           img{
+            float: none;
+            margin-top: 20px;
+            margin-left: 200px;
+           }
+
+        </style>
+    </head>
+    <body>
+        <div id="header-set">
+        <header>
+            <img src="logo.png" width="200px" height="100px">
+        </header>
+        </div>
+        <frameset  cols="25%,*" scrolling="no" noresize>
+        <div>
+             <iframe src="nav.html" name="navFrame" id="nav-frame" title="Navigation frame"></iframe>
+              <iframe src="home.html" name="contentFrame" id="content-frame" title="Content frame"></iframe>
+        </div>
+        </frameset>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+/* relative.css */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+}
+
+.container {
+    width: 600px;
+    height: 300px;
+    border: 2px solid black;
+    margin: 30px auto;
+    background: white;
+    position: relative;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+}
+
+.box1 {
+    background: red;
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+
+.box2 {
+    background: blue;
+    position: relative;
+    top: 40px;
+    left: 60px;
+}
+
+.box3 {
+    background: green;
+    position: relative;
+    top: 60px;
+    left: 90px;
+}
